@@ -13,7 +13,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 
-//Having multiple main classes (Testcase101 and PagesforAutomationAssignment) within the same file is not recommended. Each class should ideally be in its own file.
+//Line 21, 120 -Having multiple main classes (Testcase101 and PagesforAutomationAssignment) within the same file is not recommended. Each class should ideally be in its own file.
 // (PagesforAutomationAssignment) should be in base reusable code file
 
 //The code don't have comments explaining its functionality and purpose, making it difficult to understand for new joiners or freshers and also other developers
@@ -22,7 +22,7 @@ public class Testcase101 {
 
 	public static void main(String[] args) throws InterruptedException, AWTException {
 
-// Without download Geckodriver.exe file,because need download .exe for every updation.  Add the WebDriverManager dependency to pom.xml file 
+//line 29, 125- Without download Geckodriver.exe file,because need download .exe for every updation.  Add the WebDriverManager dependency to pom.xml file 
 //Use WebDriverManager in code to set up the WebDriver, Create a new instance of FirefoxDriver
 
 
@@ -30,11 +30,11 @@ public class Testcase101 {
 		WebDriver driver = new FirefoxDriver();
 		driver.get("https://interview.supporthive.com/staff/");
 
-//The usage of implicitlyWait is discouraged when explicit waits can be used. Implicit waits can lead to unexpected behavior       
+//line 34,108-The usage of implicitlyWait is discouraged when explicit waits can be used. Implicit waits can lead to unexpected behavior       
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 
-//Credentials like username and password are hardcoded directly into the code. It's better to use a configuration file or environment variables to store sensitive information      
+// line 38,39 -Credentials like username and password are hardcoded directly into the code. It's better to use a configuration file or environment variables to store sensitive information      
 		driver.findElement(By.id("id_username")).sendKeys("Agent");
 		driver.findElement(By.id("id_password")).sendKeys("Agent@123");
 		driver.findElement(By.id("btn-submit")).click();
@@ -44,7 +44,7 @@ public class Testcase101 {
 		WebElement statuses = driver.findElement(By.linkText("Statuses"));
 		statuses.click();
 
- //XPath expressions like /html/body/div[3]/div/section/section/div/header/button are absolute, making them brittle. Prefer to use relative XPath       
+ //line 48, 111,117 -XPath expressions like /html/body/div[3]/div/section/section/div/header/button are absolute, making them brittle. Prefer to use relative XPath       
 		driver.findElement(By.xpath("/html/body/div[3]/div/section/section/div/header/button")).click();
 
   //Should create a separate Ex.elementLocator.java' file for dedicated to storing locators      
@@ -74,7 +74,7 @@ public class Testcase101 {
 	      addCreate.click();
 
 
-//usage of Thread.sleep() can cause unnecessary delays and make the script less reliable. Consider using explicit waits instead
+//line 79,85,100,116 - usage of Thread.sleep() can cause unnecessary delays and make the script less reliable. Consider using explicit waits instead
 
 	      Thread.sleep(3000);
 
@@ -104,7 +104,7 @@ action.moveToElement(tickets2).build().perform();
 WebElement priorities2 = driver.findElement(By.linkText("Priorities"));
 priorities2.click();
 
-//The usage of implicitlyWait is discouraged when explicit waits can be used. Implicit waits can lead to unexpected behavior
+
 driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
 //Prefer to use relative XPath
@@ -121,7 +121,7 @@ public class PagesforAutomationAssignment {
 
     public static void main(String[] args) {
 
-//Use WebDriverManager in code to set up the WebDriver, Create a new instance of ChromeDriver
+//line 125 -Use WebDriverManager in code to set up the WebDriver, Create a new instance of ChromeDriver
         ChromeDriver driver = new ChromeDriver();
         driver.get("https://www.happyfox.com");
 
